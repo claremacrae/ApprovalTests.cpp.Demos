@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.8)
 
 # disable testsuite if used via add_subdirectory()
-if(NOT DEFINED PROJECT_NAME)
+if (NOT DEFINED PROJECT_NAME)
     set(NOT_SUBPROJECT ON)
-endif()
+endif ()
 
 # Provide path for scripts
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/CMake")
@@ -17,9 +17,9 @@ if (NOT_SUBPROJECT)
     # Download and unpack googletest at configure time
     configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
     execute_process(COMMAND "${CMAKE_COMMAND}" -G "${CMAKE_GENERATOR}" .
-            WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/googletest-download" )
+            WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/googletest-download")
     execute_process(COMMAND "${CMAKE_COMMAND}" --build .
-            WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/googletest-download" )
+            WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/googletest-download")
 
     # Prevent GoogleTest from overriding our compiler/linker options
     # when building with Visual Studio
@@ -29,10 +29,10 @@ if (NOT_SUBPROJECT)
     # the following targets: gtest, gtest_main, gmock
     # and gmock_main
     add_subdirectory("${CMAKE_BINARY_DIR}/googletest-src"
-                     "${CMAKE_BINARY_DIR}/googletest-build")
+            "${CMAKE_BINARY_DIR}/googletest-build")
 
     enable_testing()
     add_subdirectory(third_party)
     add_subdirectory(demos)
-#    add_subdirectory(examples)
-endif()
+    #    add_subdirectory(examples)
+endif ()
