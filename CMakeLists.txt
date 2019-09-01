@@ -5,6 +5,9 @@ if(NOT DEFINED PROJECT_NAME)
     set(NOT_SUBPROJECT ON)
 endif()
 
+# Provide path for scripts
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/CMake")
+
 project(ApprovalTests.cpp)
 #add_subdirectory(ApprovalTests)
 
