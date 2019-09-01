@@ -30,6 +30,6 @@ if (NOT_SUBPROJECT)
 
     enable_testing()
     add_subdirectory(third_party)
-#    add_subdirectory(tests)
+    add_subdirectory(demos)
 #    add_subdirectory(examples)
 endif()
