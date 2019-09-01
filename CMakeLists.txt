@@ -6,7 +6,7 @@ if(NOT DEFINED PROJECT_NAME)
 endif()
 
 project(ApprovalTests.cpp)
-add_subdirectory(ApprovalTests)
+#add_subdirectory(ApprovalTests)
 
 set(CMAKE_VERBOSE_MAKEFILE off)
 
@@ -30,6 +30,6 @@ if (NOT_SUBPROJECT)
 
     enable_testing()
     add_subdirectory(third_party)
-    add_subdirectory(tests)
-    add_subdirectory(examples)
+#    add_subdirectory(tests)
+#    add_subdirectory(examples)
 endif()
