@@ -43,17 +43,11 @@ TEST(Test07TestScenarios, New_test_of_legacy_feature)
 
 namespace
 {
-    long fibonacci(unsigned n)
-    {
-        if (n < 2) return n;
-        return fibonacci(n-1) + fibonacci(n-2);
-    }
-
     // todo make this in to a function that takes a value
     class FibonacciCalculator
     {
     public:
-        void calculate(std::string path)
+        void calculate(const std::string& path)
         {
             std::ofstream stream(path);
 
@@ -62,6 +56,13 @@ namespace
             std::time_t end_time = std::chrono::system_clock::to_time_t(end);
 
             stream << "finished computation at " << std::ctime(&end_time) << '\n';
+        }
+
+    private:
+        static long fibonacci(unsigned n)
+        {
+            if (n < 2) return n;
+            return fibonacci(n-1) + fibonacci(n-2);
         }
     };
 
