@@ -43,15 +43,18 @@ TEST(Test07TestScenarios, New_test_of_legacy_feature)
 
 namespace
 {
-    // todo make this in to a function that takes a value
     class FibonacciCalculator
     {
     public:
+        explicit FibonacciCalculator(unsigned n) : n(n)
+        {
+        }
+
         void calculate(const std::string& path)
         {
             std::ofstream stream(path);
 
-            stream << "f(42) = " << fibonacci(42) << '\n';
+            stream << "f(" << n << ") = " << fibonacci(n) << '\n';
             auto end = std::chrono::system_clock::now();
             std::time_t end_time = std::chrono::system_clock::to_time_t(end);
 
@@ -64,9 +67,9 @@ namespace
             if (n < 2) return n;
             return fibonacci(n-1) + fibonacci(n-2);
         }
+
+        unsigned n;
     };
-
-
 
     class DateRemovingLogFileWriter : public ApprovalWriter
     {
@@ -160,7 +163,7 @@ TEST(Test07TestScenarios, Deal_with_dates_and_times_in_output)
     // strip out any dates and times, so that the files are expected to be
     // identical.
 
-    FibonacciCalculator calculator;
+    FibonacciCalculator calculator(42);
     DateRemovingLogFileWriter datelessWriter(calculator);
 
     Approvals::verify(datelessWriter);
