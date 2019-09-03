@@ -5,7 +5,7 @@
 
 using namespace ApprovalTests;
 
-TEST_CASE("UseConsoleReporter")
+TEST_CASE("UseConsoleReporter", "[!shouldfail]")
 {
     // The intention of this is to show the text-based diff output next to the
     // output reporting the test failure.
