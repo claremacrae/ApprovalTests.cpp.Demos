@@ -90,6 +90,13 @@ namespace
         }
 
     private:
+        void rewriteLogFileRemovingDatesAndTimes(const std::string& path) const
+        {
+            auto lines = readLines(path);
+            stripDatesAndTimes(lines);
+            writeLines(lines, path);
+        }
+
         std::vector<std::string> readLines(const std::string& path ) const
         {
             std::ifstream infile(path);
@@ -132,13 +139,6 @@ namespace
             {
                 outfile << line << '\n';
             }
-        }
-
-        void rewriteLogFileRemovingDatesAndTimes(const std::string& path) const
-        {
-            auto lines = readLines(path);
-            stripDatesAndTimes(lines);
-            writeLines(lines, path);
         }
 
     private:
