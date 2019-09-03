@@ -1,6 +1,8 @@
 #include <ostream>
 #include "ApprovalTests.hpp"
 #include <gtest/gtest.h>
+#include <chrono>
+#include <ctime>
 
 using namespace ApprovalTests;
 
@@ -40,13 +42,27 @@ TEST(Test07TestScenarios, New_test_of_legacy_feature)
 
 namespace
 {
+    long fibonacci(unsigned n)
+    {
+        if (n < 2) return n;
+        return fibonacci(n-1) + fibonacci(n-2);
+    }
+
     class LogFileWriter
     {
     public:
         void write(std::string path)
         {
             std::ofstream stream(path);
-            stream << "2019-02-01 19:27:34 Sample log text\n";
+
+            auto start = std::chrono::system_clock::now();
+            stream << "f(42) = " << fibonacci(42) << '\n';
+            auto end = std::chrono::system_clock::now();
+
+            std::chrono::duration<double> elapsed_seconds = end-start;
+            std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+
+            stream << "finished computation at " << std::ctime(&end_time) << '\n';
         }
     };
 
