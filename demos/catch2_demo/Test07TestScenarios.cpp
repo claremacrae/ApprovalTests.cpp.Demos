@@ -2,6 +2,9 @@
 #include "ApprovalTests.hpp"
 #include "Catch.hpp"
 
+#include "../../include/FibonacciCalculator.h"
+#include "../../include/DateRemovingLogFileWriter.h"
+
 using namespace ApprovalTests;
 
 namespace
@@ -38,52 +41,6 @@ TEST_CASE("New test of legacy feature")
 
 // Problem: Output contains data that changes each run, e.g. date-and-time
 
-namespace
-{
-    class LogFileWriter
-    {
-    public:
-        void write(std::string path)
-        {
-            std::ofstream stream(path);
-            stream << "2019-02-01 19:27:34 Sample log text\n";
-        }
-    };
-
-    void rewriteLogFileRemovingDatesAndTimes(std::string path)
-    {
-        // Implementation:
-        //  1. reads the given file
-        //  2. converts any data-and-time strings to some boilerplate, e.g. [date-time-removed]
-        //  3. overwrites with given file with the updated content
-    }
-
-    class DateRemovingLogFileWriter : public ApprovalWriter
-    {
-    public:
-        explicit DateRemovingLogFileWriter(LogFileWriter& writer) : writer(writer)
-        {
-        }
-        std::string getFileExtensionWithDot() const override
-        {
-            return ".log";
-        }
-
-        void write(std::string path) const override
-        {
-            writer.write(path);
-            rewriteLogFileRemovingDatesAndTimes(path);
-        }
-
-        void cleanUpReceived(std::string receivedPath) const override
-        {
-            ::remove(receivedPath.c_str());
-        }
-    private:
-        LogFileWriter& writer;
-    };
-}
-
 TEST_CASE("Deal with dates and times in output")
 {
     // Could refactor the system being tested to allow use of fixed dates and times
@@ -97,15 +54,10 @@ TEST_CASE("Deal with dates and times in output")
     // strip out any dates and times, so that the files are expected to be
     // identical.
 
-    // This uses:
-    // void FileApprover::verify(ApprovalNamer& n, ApprovalWriter& w, const Reporter& r)
+    FibonacciCalculator calculator(42);
+    DateRemovingLogFileWriter datelessWriter(calculator);
 
-    ApprovalTestNamer namer;
-
-    LogFileWriter writerBeingTested;
-    DateRemovingLogFileWriter datelessWriter(writerBeingTested);
-
-    FileApprover::verify(namer, datelessWriter, DiffReporter());
+    Approvals::verify(datelessWriter);
 }
 
 //--------------------------------------------------------------------------------
