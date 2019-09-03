@@ -50,10 +50,10 @@ namespace
     }
 
     // todo make this in to a function that takes a value
-    class LogFileWriter
+    class FibonacciCalculator
     {
     public:
-        void write(std::string path)
+        void calculate(std::string path)
         {
             std::ofstream stream(path);
 
@@ -70,7 +70,7 @@ namespace
     class DateRemovingLogFileWriter : public ApprovalWriter
     {
     public:
-        explicit DateRemovingLogFileWriter(LogFileWriter& writer) : writer(writer)
+        explicit DateRemovingLogFileWriter(FibonacciCalculator& calculator) : calculator(calculator)
         {
         }
         std::string getFileExtensionWithDot() const override
@@ -80,7 +80,7 @@ namespace
 
         void write(std::string path) const override
         {
-            writer.write(path);
+            calculator.calculate(path);
             rewriteLogFileRemovingDatesAndTimes(path);
         }
 
@@ -142,7 +142,7 @@ namespace
         }
 
     private:
-        LogFileWriter& writer;
+        FibonacciCalculator& calculator;
     };
 }
 
@@ -159,8 +159,8 @@ TEST(Test07TestScenarios, Deal_with_dates_and_times_in_output)
     // strip out any dates and times, so that the files are expected to be
     // identical.
 
-    LogFileWriter writerBeingTested;
-    DateRemovingLogFileWriter datelessWriter(writerBeingTested);
+    FibonacciCalculator calculator;
+    DateRemovingLogFileWriter datelessWriter(calculator);
 
     Approvals::verify(datelessWriter);
 }
