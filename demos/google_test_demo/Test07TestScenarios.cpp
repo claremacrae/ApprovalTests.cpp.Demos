@@ -55,11 +55,8 @@ namespace
         {
             std::ofstream stream(path);
 
-            auto start = std::chrono::system_clock::now();
             stream << "f(42) = " << fibonacci(42) << '\n';
             auto end = std::chrono::system_clock::now();
-
-            std::chrono::duration<double> elapsed_seconds = end-start;
             std::time_t end_time = std::chrono::system_clock::to_time_t(end);
 
             stream << "finished computation at " << std::ctime(&end_time) << '\n';
