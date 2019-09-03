@@ -49,6 +49,7 @@ namespace
         return fibonacci(n-1) + fibonacci(n-2);
     }
 
+    // todo make this in to a function that takes a value
     class LogFileWriter
     {
     public:
@@ -154,15 +155,12 @@ TEST(Test07TestScenarios, Deal_with_dates_and_times_in_output)
     // strip out any dates and times, so that the files are expected to be
     // identical.
 
-    // This uses:
-    // void FileApprover::verify(ApprovalNamer& n, ApprovalWriter& w, const Reporter& r)
-
     ApprovalTestNamer namer;
 
     LogFileWriter writerBeingTested;
     DateRemovingLogFileWriter datelessWriter(writerBeingTested);
 
-    FileApprover::verify(namer, datelessWriter, DiffReporter());
+    Approvals::verify(datelessWriter);
 }
 
 //--------------------------------------------------------------------------------
