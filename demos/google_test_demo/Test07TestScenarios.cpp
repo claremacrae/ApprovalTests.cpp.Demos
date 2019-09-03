@@ -108,16 +108,10 @@ namespace
         }
     }
 
-    void rewriteLogFileRemovingDatesAndTimes(std::string path)
+    void rewriteLogFileRemovingDatesAndTimes(const std::string& path)
     {
-        // Implementation:
-        //  1. reads the given file
         auto lines = readLines(path);
-
-        //  2. converts any data-and-time strings to some boilerplate, e.g. [date-time-removed]
         stripDatesAndTimes(lines);
-
-        //  3. overwrites with given file with the updated content
         writeLines(lines, path);
     }
 
