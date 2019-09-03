@@ -1,6 +1,8 @@
 #include "ApprovalTests.hpp"
 #include <gtest/gtest.h>
 
+using namespace ApprovalTests;
+
 TEST(Test03, UseSpecificReporter)
 {
     Approvals::verify("Some\nMulti-line\noutput", Windows::AraxisMergeReporter());

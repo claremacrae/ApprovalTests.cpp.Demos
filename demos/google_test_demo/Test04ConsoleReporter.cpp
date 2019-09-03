@@ -3,6 +3,8 @@
 
 #include "../../include/ConsoleDiffReporter.h"
 
+using namespace ApprovalTests;
+
 TEST(Test04, DISABLED_DUE_TO_INTENTIONAL_FAILURE_UseConsoleReporter)
 {
     FirstWorkingReporter diff_reporter(

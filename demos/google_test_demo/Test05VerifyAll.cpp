@@ -3,6 +3,8 @@
 
 #include <list>
 
+using namespace ApprovalTests;
+
 TEST(Test05VerifyAll, verifyAllWithVector)
 {
     std::vector<int> numbers{ 0, 1, 2, 3};

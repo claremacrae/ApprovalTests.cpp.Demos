@@ -3,6 +3,8 @@
 
 #include "../../include/ConsoleDiffReporter.h"
 
+using namespace ApprovalTests;
+
 TEST_CASE("UseConsoleReporter")
 {
     // The intention of this is to show the text-based diff output next to the

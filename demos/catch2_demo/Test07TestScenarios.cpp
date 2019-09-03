@@ -2,6 +2,8 @@
 #include "ApprovalTests.hpp"
 #include "Catch.hpp"
 
+using namespace ApprovalTests;
+
 namespace
 {
     class LegacyThing;
@@ -62,18 +64,18 @@ namespace
         explicit DateRemovingLogFileWriter(LogFileWriter& writer) : writer(writer)
         {
         }
-        string getFileExtensionWithDot() override
+        std::string getFileExtensionWithDot() const override
         {
             return ".log";
         }
 
-        void write(std::string path) override
+        void write(std::string path) const override
         {
             writer.write(path);
             rewriteLogFileRemovingDatesAndTimes(path);
         }
 
-        void cleanUpReceived(std::string receivedPath) override
+        void cleanUpReceived(std::string receivedPath) const override
         {
             ::remove(receivedPath.c_str());
         }
@@ -116,7 +118,7 @@ namespace
     class QImage
     {
     public:
-        bool save(std::string path)
+        bool save(std::string path) const
         {
             // Glossing over detail that the real QImage save method takes a QString
             return true;
@@ -132,17 +134,17 @@ namespace
         {
         }
 
-        std::string getFileExtensionWithDot() override
+        std::string getFileExtensionWithDot() const override
         {
             return ".png";
         }
 
-        void write(std::string path) override
+        void write(std::string path) const override
         {
             image.save(path);
         }
 
-        void cleanUpReceived(std::string receivedPath) override
+        void cleanUpReceived(std::string receivedPath) const override
         {
         }
 

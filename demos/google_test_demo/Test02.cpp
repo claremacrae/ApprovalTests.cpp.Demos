@@ -1,6 +1,8 @@
 #include "ApprovalTests.hpp"
 #include <gtest/gtest.h>
 
+using namespace ApprovalTests;
+
 // googletest - test static value, for demo purposes
 TEST( Test02, TestFixedInput )
 {

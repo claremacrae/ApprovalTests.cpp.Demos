@@ -1,6 +1,8 @@
 #include "ApprovalTests.hpp"
 #include "Catch.hpp"
 
+using namespace ApprovalTests;
+
 // Approvals test - test static value, for demo purposes
 TEST_CASE("TestFixedInput")
 {

@@ -1,6 +1,8 @@
 #include "ApprovalTests.hpp"
 #include "Catch.hpp"
 
+using namespace ApprovalTests;
+
 namespace
 {
     std::string concatenateStringAndInt(std::string s, int i)
@@ -14,10 +16,7 @@ TEST_CASE("verifyAllCombinationsWithFunction")
     const std::vector<std::string> strings{"hello", "world"};
     const std::vector<int> numbers{1, 2, 3};
 
-    CombinationApprovals::verifyAllCombinations<
-        std::vector<std::string>,       // The type of element in our first input container
-        std::vector<int>,               // The type of element in our second input container
-        std::string>(                   // The return type from testing one combination of inputs
+    CombinationApprovals::verifyAllCombinations(
             concatenateStringAndInt,    // Function that takes one combination of inputs, and returns the result to be approved
             strings,                    // The first input container
             numbers);                   // The second input container
@@ -46,10 +45,7 @@ TEST_CASE("verifyAllCombinationsWithLambda")
 {
     std::vector<std::string> strings{"hello", "world"};
     std::vector<int> numbers{1, 2, 3};
-    CombinationApprovals::verifyAllCombinations<
-        std::vector<std::string>,       // The type of element in our first input container
-        std::vector<int>,               // The type of element in our second input container
-        std::string>(                   // The return type from testing one combination of inputs
+    CombinationApprovals::verifyAllCombinations(
             // Lambda that acts on one combination of inputs, and returns the result to be approved:
             [](std::string s, int i) { return s + " " + std::to_string(i); },
             strings,                    // The first input container

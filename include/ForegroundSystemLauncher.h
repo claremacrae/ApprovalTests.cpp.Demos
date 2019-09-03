@@ -3,6 +3,8 @@
 
 #include "ApprovalTests.hpp"
 
+using namespace ApprovalTests;
+
 // Based on SystemLauncher, and differs in that it runs the command in
 // the foreground instead of the background, so that any text output is
 // interleaved in with the output from the test framework.

@@ -1,6 +1,8 @@
 #include "ApprovalTests.hpp"
 #include "Catch.hpp"
 
+using namespace ApprovalTests;
+
 TEST_CASE("UseSpecificReporter")
 {
     Approvals::verify(

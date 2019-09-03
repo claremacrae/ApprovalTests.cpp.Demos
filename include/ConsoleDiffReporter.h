@@ -5,6 +5,8 @@
 
 #include "ForegroundSystemLauncher.h"
 
+using namespace ApprovalTests;
+
 // Based on GenericDiffReporter, but using a different launcher
 class ConsoleDiffReporter : public CommandReporter {
 private:
