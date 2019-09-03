@@ -46,7 +46,7 @@ namespace
     class FibonacciCalculator
     {
     public:
-        explicit FibonacciCalculator(unsigned n) : n(n)
+        explicit FibonacciCalculator(unsigned value) : value(value)
         {
         }
 
@@ -54,7 +54,7 @@ namespace
         {
             std::ofstream stream(path);
 
-            stream << "f(" << n << ") = " << fibonacci(n) << '\n';
+            stream << "f(" << value << ") = " << fibonacci(value) << '\n';
             auto end = std::chrono::system_clock::now();
             std::time_t end_time = std::chrono::system_clock::to_time_t(end);
 
@@ -68,7 +68,7 @@ namespace
             return fibonacci(n-1) + fibonacci(n-2);
         }
 
-        unsigned n;
+        unsigned value;
     };
 
     class DateRemovingLogFileWriter : public ApprovalWriter
