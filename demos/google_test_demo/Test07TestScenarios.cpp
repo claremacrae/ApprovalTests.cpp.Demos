@@ -155,8 +155,6 @@ TEST(Test07TestScenarios, Deal_with_dates_and_times_in_output)
     // strip out any dates and times, so that the files are expected to be
     // identical.
 
-    ApprovalTestNamer namer;
-
     LogFileWriter writerBeingTested;
     DateRemovingLogFileWriter datelessWriter(writerBeingTested);
 
