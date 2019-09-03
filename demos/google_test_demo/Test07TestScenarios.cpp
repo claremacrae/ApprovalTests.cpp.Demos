@@ -3,6 +3,7 @@
 #include <gtest/gtest.h>
 #include <chrono>
 #include <ctime>
+#include <regex>
 
 using namespace ApprovalTests;
 
@@ -63,12 +64,61 @@ namespace
         }
     };
 
+    std::vector<std::string> readLines(const std::string& path )
+    {
+        std::ifstream infile(path);
+        if( !infile.is_open() )
+            throw std::domain_error( "Unable to load input file: " + path );
+
+        std::vector<std::string> lines;
+        std::string line;
+        while (std::getline(infile, line))
+        {
+            lines.emplace_back(line);
+        }
+        return lines;
+    }
+
+    std::string stripDateAndTime(const std::string& line)
+    {
+        // Example date:
+        // Tue Sep  3 16:58:52 2019
+        const auto dateRegex = R"(([A-Za-z]{3}) ([A-Za-z]{3}) ([0-9 ]{2}) ([0-9]{2}):([0-9]{2}):([0-9]{2}) ([0-9]{4}))";
+        const std::string replacementText = "[date-time-removed]";
+        return std::regex_replace(line, std::regex(dateRegex), replacementText);
+    }
+
+    void stripDatesAndTimes(std::vector<std::string>& lines)
+    {
+        for(auto& line : lines)
+        {
+            line = stripDateAndTime(line);
+        }
+    }
+
+    void writeLines(const std::vector<std::string>& lines, const std::string& path )
+    {
+        std::ofstream outfile(path);
+        if( !outfile.is_open() )
+            throw std::domain_error( "Unable to re-write input file: " + path );
+
+        for( const auto& line : lines)
+        {
+            outfile << line << '\n';
+        }
+    }
+
     void rewriteLogFileRemovingDatesAndTimes(std::string path)
     {
         // Implementation:
         //  1. reads the given file
+        auto lines = readLines(path);
+
         //  2. converts any data-and-time strings to some boilerplate, e.g. [date-time-removed]
+        stripDatesAndTimes(lines);
+
         //  3. overwrites with given file with the updated content
+        writeLines(lines, path);
     }
 
     class DateRemovingLogFileWriter : public ApprovalWriter
