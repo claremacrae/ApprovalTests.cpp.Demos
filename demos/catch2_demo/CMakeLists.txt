@@ -2,6 +2,7 @@ project(catch2_demo)
 set(CMAKE_CXX_STANDARD 17)
 add_executable(${PROJECT_NAME}
         main.cpp
+        DisposableExplanation.cpp
         Test01.cpp
         Test02.cpp
         Test03CustomReporters.cpp
