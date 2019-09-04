@@ -21,6 +21,6 @@ Purpose of the sub-directories in this repo:
 
 ## Samples elsewhere
 
-* [https://github.com/claremacrae/cppp2019/tree/master/gilded_rose_refactoring_kata](gilded_rose_refactoring_kata)
+* [gilded_rose_refactoring_kata](https://github.com/claremacrae/cppp2019/tree/master/gilded_rose_refactoring_kata)
     * A worked example of the [cpp version of Emily Bache's GildedRose Refactoring Kata](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/cpp)
 * The [ApprovalTests.cpp User Guide](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md#top) also has plenty of code snippets showing how to use the library.
