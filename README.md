@@ -4,7 +4,7 @@
 
 Code samples and information for various talks and demos on ApprovalTests.cpp.
 
-The samples here demonstrate use of [ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp), which is a new C++ implementation of Llewellyn Falco's [Approval Tests](http://approvaltests.com/) approach to testing legacy code.
+The samples here demonstrate use of [ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp), which is the C++ implementation of Llewellyn Falco's [Approval Tests](http://approvaltests.com/) approach to testing legacy and hard-to-test code.
 
 ## Talks and presentations
 
@@ -21,6 +21,6 @@ Purpose of the sub-directories in this repo:
 
 ## Samples elsewhere
 
-* [gilded_rose_refactoring_kata/](gilded_rose_refactoring_kata)
+* [https://github.com/claremacrae/cppp2019/tree/master/gilded_rose_refactoring_kata](gilded_rose_refactoring_kata)
     * A worked example of the [cpp version of Emily Bache's GildedRose Refactoring Kata](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/cpp)
 * The [ApprovalTests.cpp User Guide](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md#top) also has plenty of code snippets showing how to use the library.
