@@ -1,4 +1,4 @@
-# demo_approvals_and_googletest/
+# google_test_demo/
 
 Some example uses of [ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp) with the [Google Test framework](https://github.com/google/googletest), with detailed explanatory comments.
 

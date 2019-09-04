@@ -1,4 +1,4 @@
-# demo_approvals_and_catch2/
+# catch2_demo/
 
 Some example uses of [ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp) with the [Catch2 test framework](https://github.com/catchorg/Catch2), with detailed explanatory comments.
 

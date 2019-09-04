@@ -14,9 +14,9 @@ For more information, see my list of [talks and presentations](https://claremacr
 
 Purpose of the sub-directories in this repo:
 
-* [demo_approvals_and_catch2/](demo_approvals_and_catch2)
+* [catch2_demo/](catch2_demo)
     * Some example uses of [ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp) with the [Catch2 test framework](https://github.com/catchorg/Catch2), with detailed explanatory comments in the code.
-* [demo_approvals_and_googletest/](demo_approvals_and_googletest)
+* [google_test_demo/](google_test_demo)
     * Some example uses of [ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp) with the [Google Test framework](https://github.com/google/googletest), with detailed explanatory comments in the code.
 
 ## Samples elsewhere
