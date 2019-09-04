@@ -6,6 +6,12 @@ Code samples and information for various talks and demos on ApprovalTests.cpp.
 
 The samples here demonstrate use of [ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp), which is the C++ implementation of Llewellyn Falco's [Approval Tests](http://approvaltests.com/) approach to testing legacy and hard-to-test code.
 
+## Branches
+
+This evolving repo contains demos used in multiple different talks over time.
+
+There will be different branches for each successive generation of the code, differing in things like which versions of [ApprovalTests.cpp and other 3rd-party libraries](third_party/) are used. 
+
 ## Talks and presentations
 
 For more information, see my list of [talks and presentations](https://claremacrae.co.uk/conferences/presentations.html), with links to any slides and recordings.
