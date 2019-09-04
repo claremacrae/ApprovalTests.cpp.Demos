@@ -2,8 +2,8 @@
 #include "ApprovalTests.hpp"
 #include "Catch.hpp"
 
-#include "../../include/FibonacciCalculator.h"
-#include "../../include/DateRemovingLogFileWriter.h"
+#include "include/FibonacciCalculator.h"
+#include "include/DateRemovingLogFileWriter.h"
 
 using namespace ApprovalTests;
 

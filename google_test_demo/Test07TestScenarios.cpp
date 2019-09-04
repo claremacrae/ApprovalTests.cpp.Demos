@@ -1,7 +1,7 @@
 #include "ApprovalTests.hpp"
 
-#include "../../include/FibonacciCalculator.h"
-#include "../../include/DateRemovingLogFileWriter.h"
+#include "include/FibonacciCalculator.h"
+#include "include/DateRemovingLogFileWriter.h"
 
 #include <gtest/gtest.h>
 

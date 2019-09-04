@@ -1,7 +1,7 @@
 #include "ApprovalTests.hpp"
 #include <gtest/gtest.h>
 
-#include "../../include/ConsoleDiffReporter.h"
+#include "include/ConsoleDiffReporter.h"
 
 using namespace ApprovalTests;
 

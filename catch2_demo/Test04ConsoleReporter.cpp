@@ -1,7 +1,7 @@
 #include "ApprovalTests.hpp"
 #include "Catch.hpp"
 
-#include "../../include/ConsoleDiffReporter.h"
+#include "include/ConsoleDiffReporter.h"
 
 using namespace ApprovalTests;
 

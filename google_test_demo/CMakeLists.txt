@@ -10,7 +10,7 @@ add_executable(${PROJECT_NAME}
         Test06VerifyAllCombinations.cpp
         Test07TestScenarios.cpp
         )
-target_link_libraries(${PROJECT_NAME} ApprovalTests gtest gtest_main)
+target_link_libraries(${PROJECT_NAME} ApprovalTests include gtest gtest_main)
 
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
