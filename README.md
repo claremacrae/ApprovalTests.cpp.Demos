@@ -18,6 +18,12 @@ Purpose of the sub-directories in this repo:
     * Some example uses of [ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp) with the [Catch2 test framework](https://github.com/catchorg/Catch2), with detailed explanatory comments in the code.
 * [google_test_demo/](google_test_demo)
     * Some example uses of [ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp) with the [Google Test framework](https://github.com/google/googletest), with detailed explanatory comments in the code.
+* [catch1_demo/](catch1_demo)
+    * Minimal example for now, which shows how to set up the main for use with [Catch1](https://github.com/catchorg/Catch2/tree/Catch1.x)
+* [doctest_demo/](doctest_demo)
+    * Minimal example for now, which shows how to set up the main for use with [doctest](https://github.com/onqtam/doctest)
+* [include](include)
+    * Some code used by the above demos (all files inlined for now, for simplicity)
 
 ## Samples elsewhere
 
