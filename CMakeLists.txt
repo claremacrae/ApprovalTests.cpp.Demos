@@ -33,6 +33,9 @@ if (NOT_SUBPROJECT)
 
     enable_testing()
     add_subdirectory(third_party)
-    add_subdirectory(demos)
-    #    add_subdirectory(examples)
+
+    add_subdirectory(catch1_demo)
+    add_subdirectory(catch2_demo)
+    add_subdirectory(doctest_demo)
+    add_subdirectory(google_test_demo)
 endif ()
