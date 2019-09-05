@@ -130,15 +130,8 @@ TEST(Test07TestScenarios, DISABLED_DUE_TO_INTENTIONAL_FAILURE_Test_an_image)
     QImage image = getImage();
     QImageWriter imageWriter(image);
 
-    ApprovalTestNamer namer;
-
     // We're using QuietReporter here due to using dummy image-writing code.
-    // In a real-world case, we'd use the standard DiffReporter(), to 
+    // In a real-world case, we'd use the standard DiffReporter(), to
     // review the results interactively.
-    FileApprover::verify(namer, imageWriter, QuietReporter());
+    Approvals::verify(imageWriter, QuietReporter());
 }
-
-//--------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------
-
