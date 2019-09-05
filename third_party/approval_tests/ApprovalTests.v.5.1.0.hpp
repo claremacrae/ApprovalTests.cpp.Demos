@@ -1,4 +1,4 @@
-// Approval Tests version v.X.X.Xn// More information at: https://github.com/approvals/ApprovalTests.cppn#include <string>
+// Approval Tests version v.5.1.0n// More information at: https://github.com/approvals/ApprovalTests.cppn#include <string>
 #include <fstream>
 #include <stdexcept>
 #include <utility>
@@ -1582,19 +1582,98 @@ public:
 
 #endif 
 
+ // ******************** From: QuietReporter.h
+#ifndef APPROVALTESTS_CPP_QUIETREPORTER_H
+#define APPROVALTESTS_CPP_QUIETREPORTER_H
+
+
+namespace ApprovalTests {
+
+class QuietReporter : public Reporter
+{
+public:
+    bool report(std::string , std::string ) const override
+    {
+        return true;
+    }
+};
+}
+
+#endif 
+
+ // ******************** From: CIBuildOnlyReporter.h
+#ifndef APPROVALTESTS_CPP_CIBUILDONLYREPORTER_H
+#define APPROVALTESTS_CPP_CIBUILDONLYREPORTER_H
+
+
+
+namespace ApprovalTests
+{
+    
+    class CIBuildOnlyReporter : public Reporter
+    {
+    private:
+        std::shared_ptr<Reporter> m_reporter;
+
+    public:
+        explicit CIBuildOnlyReporter(std::shared_ptr<Reporter> reporter = std::make_shared<QuietReporter>())
+            : m_reporter(reporter)
+        {
+        }
+
+        bool report(std::string received, std::string approved) const override
+        {
+            if (!isRunningUnderCI())
+            {
+                return false;
+            }
+            m_reporter->report(received, approved);
+            
+            
+            return true;
+        }
+
+        static bool isRunningUnderCI()
+        {
+            
+            auto environmentVariablesForCI = {
+                    
+                    "CI",
+                    "CONTINUOUS_INTEGRATION",
+                    "GO_SERVER_URL",
+                    "JENKINS_URL",
+                    "TEAMCITY_VERSION"
+                    
+            };
+            for (const auto& variable : environmentVariablesForCI)
+            {
+                if (!SystemUtils::safeGetEnv(variable).empty())
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+    };
+} 
+
+#endif 
+
  // ******************** From: DefaultFrontLoadedReporter.h
 #ifndef APPROVALTESTS_CPP_DEFAULTFRONTLOADEDREPORTER_H
 #define APPROVALTESTS_CPP_DEFAULTFRONTLOADEDREPORTER_H
 
 
 namespace ApprovalTests {
-
-class DefaultFrontLoadedReporter : public Reporter
+class DefaultFrontLoadedReporter : public FirstWorkingReporter
 {
 public:
-    virtual bool report(std::string , std::string ) const override
+    DefaultFrontLoadedReporter() : FirstWorkingReporter(
+        {
+            new CIBuildOnlyReporter()
+        }
+    )
     {
-        return false;
     }
 };
 }
@@ -2776,60 +2855,21 @@ public:
 
 #endif 
 
- // ******************** From: CIBuildOnlyReporter.h
-#ifndef APPROVALTESTS_CPP_CIBUILDONLYREPORTER_H
-#define APPROVALTESTS_CPP_CIBUILDONLYREPORTER_H
-
+ // ******************** From: CIBuildOnlyReporterUtils.h
+#ifndef APPROVALTESTS_CPP_CIBUILDONLYREPORTERUTILS_H
+#define APPROVALTESTS_CPP_CIBUILDONLYREPORTERUTILS_H
 
 
 namespace ApprovalTests
 {
-    
-    class CIBuildOnlyReporter : public Reporter
+    namespace CIBuildOnlyReporterUtils
     {
-    private:
-        std::shared_ptr<Reporter> m_reporter;
-
-    public:
-        explicit CIBuildOnlyReporter(std::shared_ptr<Reporter> reporter)
-            : m_reporter(reporter)
-        {
-        }
-
-        static FrontLoadedReporterDisposer useAsFrontLoadedReporter(const std::shared_ptr<Reporter>& reporter)
+        inline FrontLoadedReporterDisposer useAsFrontLoadedReporter(const std::shared_ptr<Reporter>& reporter)
         {
             return Approvals::useAsFrontLoadedReporter(
                     std::make_shared<ApprovalTests::CIBuildOnlyReporter>( reporter ));
         }
-
-        bool report(std::string received, std::string approved) const override
-        {
-            if (!isRunningUnderCI())
-            {
-                return false;
-            }
-            m_reporter->report(received, approved);
-            
-            
-            return true;
-        }
-
-        static bool isRunningUnderCI()
-        {
-
-
-
-            auto environmentVariablesForCI = {"CI", "CONTINUOUS_INTEGRATION", "TEAMCITY_VERSION"};
-            for (const auto& variable : environmentVariablesForCI)
-            {
-                if (!SystemUtils::safeGetEnv(variable).empty())
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-    };
+    }
 } 
 
 #endif 
@@ -2899,25 +2939,6 @@ public:
             result |= r->report(received, approved);
         }
         return result;
-    }
-};
-}
-
-#endif 
-
- // ******************** From: QuietReporter.h
-#ifndef APPROVALTESTS_CPP_QUIETREPORTER_H
-#define APPROVALTESTS_CPP_QUIETREPORTER_H
-
-
-namespace ApprovalTests {
-
-class QuietReporter : public Reporter
-{
-public:
-    bool report(std::string , std::string ) const override
-    {
-        return true;
     }
 };
 }
