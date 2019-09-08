@@ -7,7 +7,7 @@ TEST_CASE("UseSpecificReporter")
 {
     Approvals::verify(
         "Some\nMulti-line\noutput",
-        Windows::AraxisMergeReporter());
+        Windows::AraxisMergeReporter{});
 }
 
 TEST_CASE("UseCustomReporter")
@@ -25,5 +25,5 @@ TEST_CASE("UseQuietReporter")
     // Failing tests will still fail, but nothing will be launched.
     Approvals::verify(
         "Some\nMulti-line\noutput",
-        QuietReporter());
+        QuietReporter{});
 }

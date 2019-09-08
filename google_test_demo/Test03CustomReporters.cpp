@@ -5,7 +5,7 @@ using namespace ApprovalTests;
 
 TEST(Test03, UseSpecificReporter)
 {
-    Approvals::verify("Some\nMulti-line\noutput", Windows::AraxisMergeReporter());
+    Approvals::verify("Some\nMulti-line\noutput", Windows::AraxisMergeReporter{});
 }
 
 TEST(Test03, UseCustomReporter)

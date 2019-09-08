@@ -25,7 +25,7 @@ namespace
 
     LegacyThing doLegacyOperation()
     {
-        return LegacyThing();
+        return LegacyThing{};
     }
 }
 
@@ -128,7 +128,7 @@ TEST_CASE("Test an image", "[!shouldfail]")
     QImageWriter imageWriter(image);
 
     // We're using QuietReporter here due to using dummy image-writing code.
-    // In a real-world case, we'd use the standard DiffReporter(), to
+    // In a real-world case, we'd use the standard DiffReporter{}, to
     // review the results interactively.
-    Approvals::verify(imageWriter, QuietReporter());
+    Approvals::verify(imageWriter, QuietReporter{});
 }

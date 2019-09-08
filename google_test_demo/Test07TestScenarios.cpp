@@ -28,7 +28,7 @@ namespace
 
     LegacyThing doLegacyOperation()
     {
-        return LegacyThing();
+        return LegacyThing{};
     }
 }
 
@@ -109,7 +109,7 @@ namespace
 
     QImage getImage()
     {
-        return QImage();
+        return QImage{};
     }
 }
 
@@ -131,7 +131,7 @@ TEST(Test07TestScenarios, DISABLED_DUE_TO_INTENTIONAL_FAILURE_Test_an_image)
     QImageWriter imageWriter(image);
 
     // We're using QuietReporter here due to using dummy image-writing code.
-    // In a real-world case, we'd use the standard DiffReporter(), to
+    // In a real-world case, we'd use the standard DiffReporter{}, to
     // review the results interactively.
-    Approvals::verify(imageWriter, QuietReporter());
+    Approvals::verify(imageWriter, QuietReporter{});
 }
