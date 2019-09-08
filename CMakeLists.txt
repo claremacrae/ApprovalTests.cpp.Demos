@@ -11,7 +11,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/CMake")
 project(ApprovalTests.cpp)
 #add_subdirectory(ApprovalTests)
 
-set(CMAKE_VERBOSE_MAKEFILE on)
+set(CMAKE_VERBOSE_MAKEFILE off)
 
 if (NOT_SUBPROJECT)
     # Download and unpack googletest at configure time
