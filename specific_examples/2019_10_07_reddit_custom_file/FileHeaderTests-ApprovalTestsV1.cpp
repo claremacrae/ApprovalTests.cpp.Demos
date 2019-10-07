@@ -22,10 +22,15 @@ TEST_CASE( "header fields are correct - with ostream operator", "[header]" )
     Approvals::verify(big_file);
     // This uses Approval Tests to capture the state of big_file to disk,
     // rather than including all the state in tests in source code.
+    //
     // This makes it really easy to add more tests, reading multiple 
     // different files, for example.
+    //
     // NOTE: The first time this test is run, the test will fail, and
     //       a differencing tool will be shown.
     //       For more information, see
     //       https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/Tutorial.md#top
+    //
+    // The output ("approved") file gets checked in to source control,
+    // along with the corresponding test file.
 }
