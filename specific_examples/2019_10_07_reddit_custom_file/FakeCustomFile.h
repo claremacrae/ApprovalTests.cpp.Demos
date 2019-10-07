@@ -6,7 +6,7 @@
 class custom_file
 {
 public:
-    custom_file(const std::string&)
+    explicit custom_file(const std::string&)
     {
         // Ignore filename for now - just use hard-coded values for testing
     }
