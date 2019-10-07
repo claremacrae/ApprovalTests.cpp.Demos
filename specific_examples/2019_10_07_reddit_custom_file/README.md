@@ -15,3 +15,5 @@ Demo code to help show Approval Tests approach for this Reddit question: [How sh
     * [FileHeaderTests-Catch.cpp](FileHeaderTests-Catch.cpp) is the test code showing in the question
 
 **For more information about ApprovalTests.cpp, see the [User Guide](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md#top)**
+
+*[Clare Macrae](https://claremacrae.co.uk/consulting/hire_me.html), 2019-10-07*
