@@ -14,6 +14,6 @@ Demo code to help show Approval Tests approach for this Reddit question: [How sh
     * [FakeCustomFile.h](FakeCustomFile.h) and [FakeCustomFile.cpp](FakeCustomFile.cpp) are fake implementations of the class being tested
     * [FileHeaderTests-Catch.cpp](FileHeaderTests-Catch.cpp) is the test code showing in the question
 
-**For more information about ApprovalTests.cpp, see the [User Guide](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md#top)**
+For more information about ApprovalTests.cpp, see the **[User Guide](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/README.md#top)** or **[various talks about Approval Tests for C++](https://claremacrae.co.uk/conferences/presentations.html#)**
 
 *[Clare Macrae](https://claremacrae.co.uk/consulting/hire_me.html), 2019-10-07*
