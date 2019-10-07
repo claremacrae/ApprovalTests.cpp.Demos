@@ -18,14 +18,9 @@ struct WriteHeaders
     }
 };
 
-void verify_custom_file_headers(const std::string& filename)
+TEST_CASE( "header fields are correct - with adaptor to write headers", "[header]" )
 {
     using namespace ApprovalTests;
     custom_file big_file{"filename"};
     Approvals::verify( WriteHeaders(big_file) );
-}
-
-TEST_CASE( "header fields are correct - with Approval Tests 3", "[header]" )
-{
-    verify_custom_file_headers("filename");
 }
