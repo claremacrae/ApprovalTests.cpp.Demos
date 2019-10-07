@@ -1,0 +1,5 @@
+filename: filename
+size:     100MB
+header1:  42
+header2:  FOO
+
