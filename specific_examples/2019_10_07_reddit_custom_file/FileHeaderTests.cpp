@@ -1,22 +1,6 @@
 #include "ApprovalTests.hpp"
 #include "Catch.hpp"
-
-class custom_file
-{
-public:
-    custom_file(const std::string&)
-    {
-        // Ignore filename for now - just use hard-coded values for testing
-    }
-    std::string size() const
-    {
-        return "100MB";
-    }
-        
-    int header1 = 42;
-    std::string header2 = "FOO";
-        
-};
+#include "FakeCustomFile.h"
 
 TEST_CASE( "header fields are correct", "[header]" ){
     custom_file big_file{"filename"};
