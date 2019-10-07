@@ -34,6 +34,8 @@ Purpose of the sub-directories in this repo:
     * Minimal example for now, which shows how to set up the main for use with [doctest](https://github.com/onqtam/doctest)
 * [include](include)
     * Some code used by the above demos (all files inlined for now, for simplicity)
+* [specific_examples](specific_examples)
+    * A small selection of other examples, for example to show answers to specific questions. 
 
 ## Samples elsewhere
 
