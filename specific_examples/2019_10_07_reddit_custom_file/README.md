@@ -1,6 +1,6 @@
 # Demo code for Reddit question
 
-Demo code to help show Approval Tests approach for this question: [How should I perform a setup in Catch2?](https://old.reddit.com/r/cpp_questions/comments/de5ojy/how_should_i_perform_a_setup_in_catch2/)
+Demo code to help show Approval Tests approach for this Reddit question: [How should I perform a setup in Catch2?](https://old.reddit.com/r/cpp_questions/comments/de5ojy/how_should_i_perform_a_setup_in_catch2/)
 
 * These test files show the evolution of an approach for testing this code with [ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp). See the comments in the files for more information, but briefly:
 * [FileHeaderTests-ApprovalTestsV1.cpp](FileHeaderTests-ApprovalTestsV1.cpp):
