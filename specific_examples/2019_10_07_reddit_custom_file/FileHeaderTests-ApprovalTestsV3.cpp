@@ -25,7 +25,7 @@ void verify_custom_file_headers(const std::string& filename)
     Approvals::verify( WriteHeaders(big_file) );
 }
 
-TEST_CASE( "header fields are correct - with Approval Tests 3", "[header]" )
+TEST_CASE( "header fields are correct - with function to test headers", "[header]" )
 {
     verify_custom_file_headers("filename");
 }
