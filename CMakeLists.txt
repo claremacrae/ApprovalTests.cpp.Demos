@@ -13,6 +13,17 @@ project(ApprovalTests.cpp)
 
 set(CMAKE_VERBOSE_MAKEFILE off)
 
+option(APPROVAL_TESTS_DEMOS_ENABLE_CODE_COVERAGE "Enable coverage reporting for selected tests" OFF)
+
+if(APPROVAL_TESTS_DEMOS_ENABLE_CODE_COVERAGE)
+    message(STATUS "Enable Code Coverage")
+    include(CodeCoverage)
+    # Stop Mac from bleating:
+    # clang: : error: : argument unused during compilation: '--coverage' [-Werror,-Wunused-command-line-argument]argument unused during compilation: '--coverage' [-Werror,-Wunused-command-line-argument]
+    string(REPLACE "--coverage" "" COVERAGE_COMPILER_FLAGS ${COVERAGE_COMPILER_FLAGS})
+    append_coverage_compiler_flags()
+endif()
+
 if (NOT_SUBPROJECT)
     # Download and unpack googletest at configure time
     configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
