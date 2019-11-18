@@ -1,1 +1,2 @@
 add_subdirectory(2019_10_07_reddit_custom_file)
+add_subdirectory(2019_11_18_fuzzing_gilded_rose)
