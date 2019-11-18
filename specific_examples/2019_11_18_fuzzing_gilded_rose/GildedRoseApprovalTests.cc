@@ -1,6 +1,8 @@
-#include "ApprovalTests.v.2.0.0.hpp"
+#include "ApprovalTests.hpp"
 #include <gtest/gtest.h>
 #include "GildedRose.h"
+
+using namespace ApprovalTests;
 
 std::ostream& operator<<(std::ostream& os, const Item& obj)
 {
@@ -16,8 +18,7 @@ TEST(GildedRoseApprovalTests, VerifyCombinations)
     std::vector<int> sellIns { 1 };
     std::vector<int> qualities { 1 };
 
-    CombinationApprovals::verifyAllCombinations<
-        std::vector<string>, std::vector<int>, std::vector<int>, Item>(
+    CombinationApprovals::verifyAllCombinations(
                 [](string name, int sellIn, int quality) {
                 vector<Item> items = {Item(name, sellIn, quality)};
                 GildedRose app(items);
