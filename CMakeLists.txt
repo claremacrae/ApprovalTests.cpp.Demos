@@ -42,6 +42,14 @@ if (NOT_SUBPROJECT)
     add_subdirectory("${CMAKE_BINARY_DIR}/googletest-src"
             "${CMAKE_BINARY_DIR}/googletest-build")
 
+    if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+        # Fix linker errors such as this, with clang-8:
+        #   Undefined symbols for architecture x86_64:
+        #     "std::runtime_error::what() const", referenced from:
+        #         vtable for testing::internal::GoogleTestFailureException in libgtestd.a(gtest-all.cc.o)
+        set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lstdc++")
+    endif()
+
     enable_testing()
     add_subdirectory(third_party)
     add_subdirectory(include)
