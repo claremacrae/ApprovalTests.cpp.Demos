@@ -10,6 +10,7 @@ add_executable(${PROJECT_NAME}
         Test05VerifyAll.cpp
         Test06VerifyAllCombinations.cpp
         Test07TestScenarios.cpp
+        Test08Factorial.cpp
         )
 target_link_libraries(${PROJECT_NAME} ApprovalTests include catch2)
 target_compile_definitions(${PROJECT_NAME} PRIVATE CATCH_CONFIG_FAST_COMPILE)
