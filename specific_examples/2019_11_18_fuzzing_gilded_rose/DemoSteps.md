@@ -41,3 +41,12 @@ I could follow the CLion instructions to add compiler and linker flags to enable
 * Turn on "Replace active suites with the new one"
 * Turn off "Activate Coverage View" to avoid keep fighting its layout
     * We can see the coverage of each file in the Project view for now
+
+**Get to 100% Coverage with CLion's coverage**
+
+**Show branch coverage using `CodeCoverage.cmake` lcov report**
+
+**Get to 100% branch coverage**
+
+**Try mutation testing to further improve coverage**
+ 
