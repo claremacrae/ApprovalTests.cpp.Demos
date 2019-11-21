@@ -1,4 +1,6 @@
 ---
+# To enable use of these settings, search for "clangd" in CLion preferences to get to:
+#   Editor > Code Style > General > ClangFormat: Enable ClangFormat with clangd server
 Language: Cpp
 AccessModifierOffset: -4
 AlignAfterOpenBracket: DontAlign
