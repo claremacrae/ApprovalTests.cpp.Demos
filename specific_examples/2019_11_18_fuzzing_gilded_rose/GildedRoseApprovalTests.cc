@@ -21,7 +21,8 @@ TEST(GildedRoseApprovalTests, VerifyCombinations)
     std::vector<int> qualities{1};
 
     CombinationApprovals::verifyAllCombinations(
-        [](std::string name, int sellIn, int quality) {
+        [](std::string name, int sellIn, int quality)
+        {
             std::vector<Item> items = {Item(name, sellIn, quality)};
             GildedRose app(items);
             app.updateQuality();
