@@ -20,6 +20,7 @@ TEST(GildedRoseApprovalTests, VerifyCombinations)
     std::vector<int> sellIns{1};
     std::vector<int> qualities{1};
 
+    // CLion says 35% of lines in GildedRose.cc covered
     CombinationApprovals::verifyAllCombinations(
         [](std::string name, int sellIn, int quality)
         {

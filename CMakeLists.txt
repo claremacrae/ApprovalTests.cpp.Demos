@@ -13,13 +13,13 @@ project(ApprovalTests.cpp)
 
 set(CMAKE_VERBOSE_MAKEFILE off)
 
-#option(APPROVAL_TESTS_DEMOS_ENABLE_CODE_COVERAGE "Enable coverage reporting for selected tests" OFF)
-#
-#if(APPROVAL_TESTS_DEMOS_ENABLE_CODE_COVERAGE)
-#    message(STATUS "Enable Code Coverage")
-#    include(CodeCoverage)
-#    append_coverage_compiler_flags()
-#endif()
+option(APPROVAL_TESTS_DEMOS_ENABLE_CODE_COVERAGE "Enable coverage reporting for selected tests" OFF)
+
+if(APPROVAL_TESTS_DEMOS_ENABLE_CODE_COVERAGE)
+    message(STATUS "Enable Code Coverage")
+    include(CodeCoverage)
+    append_coverage_compiler_flags()
+endif()
 
 if (NOT_SUBPROJECT)
     # Download and unpack googletest at configure time
