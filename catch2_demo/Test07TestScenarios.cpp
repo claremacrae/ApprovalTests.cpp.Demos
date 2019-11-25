@@ -54,7 +54,7 @@ TEST_CASE("Deal with dates and times in output")
     // strip out any dates and times, so that the files are expected to be
     // identical.
 
-    FibonacciCalculator calculator(42);
+    FibonacciCalculator calculator(12);
     DateRemovingLogFileWriter datelessWriter(calculator);
 
     Approvals::verify(datelessWriter);
