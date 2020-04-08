@@ -4,7 +4,6 @@ add_executable(${PROJECT_NAME}
         main.cpp
         SampleTest.cpp
         OurApprovalTestCustomisations.h
-        OurApprovalTestCustomisations.cpp
         )
 target_link_libraries(${PROJECT_NAME} ApprovalTests include catch2)
 target_compile_definitions(${PROJECT_NAME} PRIVATE CATCH_CONFIG_FAST_COMPILE)
