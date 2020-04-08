@@ -8,8 +8,8 @@ This directory shows one way of ensuring consistency in all your test `main()` f
 
 How it works:
 
-* [OurApprovalTestCustomisations.h](OurApprovalTestCustomisations.h)
-* [main.cpp](main.cpp)
+* [OurApprovalTestCustomisations.h](OurApprovalTestCustomisations.h) - see comments for how one class sets up all your chosen customisations
+* [main.cpp](main.cpp) - see comments for how that customisation is used
 
 *[Clare Macrae](https://claremacrae.co.uk/consulting/hire_me.html), 2020-04-08*
 
