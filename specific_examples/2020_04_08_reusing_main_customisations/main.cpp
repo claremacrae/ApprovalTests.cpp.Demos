@@ -1,24 +1,7 @@
 #define APPROVALS_CATCH
 #include "ApprovalTests.hpp"
+#include "OurApprovalTestCustomisations.h"
 
 using namespace ApprovalTests;
-
-class OurApprovalTestCustomisations
-{
-public:
-    OurApprovalTestCustomisations()
-        : subDirectoryDisposer(
-              Approvals::useApprovalsSubdirectory("approval_tests")),
-          defaultNamerDisposer(
-              SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer())
-    {
-    }
-
-private:
-    SubdirectoryDisposer subDirectoryDisposer;
-    DefaultNamerDisposer defaultNamerDisposer;
-
-private:
-};
 
 OurApprovalTestCustomisations customisations;
