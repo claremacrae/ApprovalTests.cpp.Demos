@@ -26,8 +26,6 @@ public:
 private:
     ApprovalTests::SubdirectoryDisposer subDirectoryDisposer;
     ApprovalTests::DefaultNamerDisposer defaultNamerDisposer;
-
-private:
 };
 
 #endif //APPROVALTESTS_CPP_OURAPPROVALTESTCUSTOMISATIONS_H
