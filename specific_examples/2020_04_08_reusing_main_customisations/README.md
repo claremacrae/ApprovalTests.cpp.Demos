@@ -12,4 +12,3 @@ How it works:
 * [main.cpp](main.cpp) - see comments for how that customisation is used
 
 *[Clare Macrae](https://claremacrae.co.uk/consulting/hire_me.html), 2020-04-08*
-
