@@ -3,6 +3,7 @@ cmake-clang-*/
 cmake-gcc-*/
 build/releases
 *.received.*
+**/received/
 .idea
 doc/html/
 .vs/
