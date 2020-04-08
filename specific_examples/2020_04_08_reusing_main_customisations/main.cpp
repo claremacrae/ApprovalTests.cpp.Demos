@@ -3,9 +3,22 @@
 
 using namespace ApprovalTests;
 
-// Put output files in a sub-directory
-auto subDirectoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
+class OurApprovalTestCustomisations
+{
+public:
+    OurApprovalTestCustomisations()
+        : subDirectoryDisposer(
+              Approvals::useApprovalsSubdirectory("approval_tests")),
+          defaultNamerDisposer(
+              SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer())
+    {
+    }
 
-// And put approved and received files in parallel directories
-auto defaultNamerDisposer =
-    SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer();
+private:
+    SubdirectoryDisposer subDirectoryDisposer;
+    DefaultNamerDisposer defaultNamerDisposer;
+
+private:
+};
+
+OurApprovalTestCustomisations customisations;
