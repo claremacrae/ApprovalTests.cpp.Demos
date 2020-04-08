@@ -1,5 +1,5 @@
 #include "ApprovalTests.hpp"
-#include "Catch.hpp"
+#include "catch2/catch.hpp"
 #include "FakeCustomFile.h"
 
 // In this version, we provide a class to write out just the information

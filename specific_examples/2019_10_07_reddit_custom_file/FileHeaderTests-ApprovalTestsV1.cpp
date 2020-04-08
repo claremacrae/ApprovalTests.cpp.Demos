@@ -1,5 +1,5 @@
 #include "ApprovalTests.hpp"
-#include "Catch.hpp"
+#include "catch2/catch.hpp"
 #include "FakeCustomFile.h"
 
 // The simplest way to use Approval Tests for an object is to write an

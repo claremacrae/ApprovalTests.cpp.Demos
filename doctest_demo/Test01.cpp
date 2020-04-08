@@ -1,4 +1,4 @@
-#include "doctest.h"
+#include "doctest/doctest.h"
 
 // Catch-only test
 TEST_CASE( "Sums are calculated" )

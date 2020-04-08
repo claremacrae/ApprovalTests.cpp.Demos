@@ -1,6 +1,6 @@
 #include <ostream>
 #include "ApprovalTests.hpp"
-#include "doctest.h"
+#include "doctest/doctest.h"
 
 #include "include/FibonacciCalculator.h"
 #include "include/DateRemovingLogFileWriter.h"

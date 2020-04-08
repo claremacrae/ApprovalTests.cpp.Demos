@@ -1,5 +1,5 @@
 #include "ApprovalTests.hpp"
-#include "doctest.h"
+#include "doctest/doctest.h"
 
 #include "include/ConsoleDiffReporter.h"
 

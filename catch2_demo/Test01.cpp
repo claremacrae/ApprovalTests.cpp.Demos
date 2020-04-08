@@ -1,4 +1,4 @@
-#include "Catch.hpp"
+#include "catch2/catch.hpp"
 
 // Catch-only test
 TEST_CASE( "Sums are calculated" )

@@ -1,5 +1,5 @@
 #include "ApprovalTests.hpp"
-#include "Catch.hpp"
+#include "catch2/catch.hpp"
 #include "FakeCustomFile.h"
 
 // This extends the previous version, this time including the file name in 
