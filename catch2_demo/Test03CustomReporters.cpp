@@ -7,14 +7,14 @@ TEST_CASE("UseSpecificReporter")
 {
     Approvals::verify(
         "Some\nMulti-line\noutput",
-        Windows::AraxisMergeReporter{});
+        Options(Windows::AraxisMergeReporter{}));
 }
 
 TEST_CASE("UseCustomReporter")
 {
-    Approvals::verify(
-        "Some\nMulti-line\noutput",
-        GenericDiffReporter(R"(C:\Program Files\TortoiseHg\lib\kdiff3.exe)"));
+    Approvals::verify("Some\nMulti-line\noutput",
+        Options(GenericDiffReporter(
+            R"(C:\Program Files\TortoiseHg\lib\kdiff3.exe)")));
 }
 
 TEST_CASE("UseQuietReporter")
@@ -25,5 +25,5 @@ TEST_CASE("UseQuietReporter")
     // Failing tests will still fail, but nothing will be launched.
     Approvals::verify(
         "Some\nMulti-line\noutput",
-        QuietReporter{});
+        Options(QuietReporter{}));
 }

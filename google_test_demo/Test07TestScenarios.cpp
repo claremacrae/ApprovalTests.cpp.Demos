@@ -133,5 +133,5 @@ TEST(Test07TestScenarios, DISABLED_DUE_TO_INTENTIONAL_FAILURE_Test_an_image)
     // We're using QuietReporter here due to using dummy image-writing code.
     // In a real-world case, we'd use the standard DiffReporter{}, to
     // review the results interactively.
-    Approvals::verify(imageWriter, QuietReporter{});
+    Approvals::verify(imageWriter, Options(QuietReporter{}));
 }

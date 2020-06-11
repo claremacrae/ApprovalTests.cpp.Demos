@@ -5,5 +5,5 @@ using namespace ApprovalTests;
 
 TEST(Test04, DISABLED_DUE_TO_INTENTIONAL_FAILURE_UseConsoleReporter)
 {
-    Approvals::verify("Some\nMulti-line\noutput", TextDiffReporter());
+    Approvals::verify("Some\nMulti-line\noutput", Options(TextDiffReporter()));
 }

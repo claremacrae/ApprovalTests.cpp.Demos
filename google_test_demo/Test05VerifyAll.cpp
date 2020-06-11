@@ -31,7 +31,7 @@ TEST(Test05VerifyAll, verifyAllWithHeaderAndVector)
     Approvals::verifyAll(
         "Some descriptive text, to help understand the output",
         numbers,
-        DiffReporter{});
+        Options(DiffReporter{}));
 }
 /*
  * Things to note here:
@@ -66,7 +66,7 @@ TEST(Test05VerifyAll, verifyAllWithHeaderContainerAndLambda)
         {
             stream << value << " => " << -value;
         },
-        DiffReporter{});
+        Options(DiffReporter{}));
 }
 /*
  * Things to note here:
@@ -97,7 +97,7 @@ TEST(Test05VerifyAll, verifyAllWithHeaderBeginEndAndLambda)
         {
             stream << value << " => " << value * value;
         },
-        DiffReporter{});
+        Options(DiffReporter{}));
 }
 /*
  * Things to note here:
