@@ -60,6 +60,33 @@ TEST_CASE("Deal with dates and times in output")
     Approvals::verify(datelessWriter);
 }
 
+TEST_CASE("Deal with dates and times in output with scrubber")
+{
+    // As above, but this time we will use a Scrubber to replace the
+    // date and time with a fixed string
+
+    // This class has a calculate() method that writes out its result
+    // and a date-and-time-stamp, to an output file.
+    // This calculate() method is the code that we are testing.
+    FibonacciCalculator calculator(12);
+    const auto filename = Approvals::getDefaultNamer()->getReceivedFile(".txt");
+    calculator.calculate(filename);
+
+    // As of v.10.0.1, ApprovalTests does not use Scrubbers
+    // in verifyExistingFile(), so we have to read in the contents
+    // of the file in to a string, and verify that.
+    const auto logText = FileUtils::readFileThrowIfMissing(filename);
+
+    // Create a "Scrubber" object that will convert date-and-time strings
+    // to some fixed text:
+    const auto dateRegex =
+        R"(([A-Za-z]{3}) ([A-Za-z]{3}) ([0-9 ]{2}) ([0-9]{2}):([0-9]{2}):([0-9]{2}) ([0-9]{4}))";
+    const std::string replacementText = "[date-time-removed]";
+    auto scrubber = Scrubbers::createRegexScrubber(dateRegex, replacementText);
+
+    Approvals::verify(logText, Options(scrubber));
+}
+
 //--------------------------------------------------------------------------------
 
 // Problem: Output is not suitable for writing to a text file
