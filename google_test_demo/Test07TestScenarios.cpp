@@ -81,9 +81,11 @@ TEST(Test07TestScenarios, Deal_with_dates_and_times_in_output_with_scrubber)
     const auto logText = FileUtils::readFileThrowIfMissing(filename);
 
     // Create a "Scrubber" object that will convert date-and-time strings
-    // to some fixed text:
+    // to some fixed text such as:
+    //  'Fri Jun  2 09:36:33 2020'
+    //  'Fri Jun 12 09:36:33 2020'
     const auto dateRegex =
-        R"(([A-Za-z]{3}) ([A-Za-z]{3}) ([0-9 ]{2}) ([0-9]{2}):([0-9]{2}):([0-9]{2}) ([0-9]{4}))";
+        R"([A-Za-z]{3} [A-Za-z]{3} [\d ]\d \d\d:\d\d:\d\d \d\d\d\d)";
     const std::string replacementText = "[date-time-removed]";
     auto scrubber = Scrubbers::createRegexScrubber(dateRegex, replacementText);
 
