@@ -2,6 +2,7 @@
 #include "catch2/catch.hpp"
 
 #include <list>
+#include <deque>
 
 using namespace ApprovalTests;
 

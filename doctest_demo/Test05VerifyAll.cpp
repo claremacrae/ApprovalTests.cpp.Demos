@@ -2,6 +2,7 @@
 #include "doctest/doctest.h"
 
 #include <list>
+#include <deque>
 
 using namespace ApprovalTests;
 
