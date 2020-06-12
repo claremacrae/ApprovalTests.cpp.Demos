@@ -1,10 +1,10 @@
 #include <gtest/gtest.h>
 
 // Google-only test
-TEST( Test01, SumsAreCalculated )
+TEST(Test01, SumsAreCalculated)
 {
-    EXPECT_EQ( 1 + 1, 2 );
-    EXPECT_EQ( 1 + 2, 3 );
+    EXPECT_EQ(1 + 1, 2);
+    EXPECT_EQ(1 + 2, 3);
 }
 
 /*

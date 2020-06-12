@@ -1,10 +1,10 @@
 #include "doctest/doctest.h"
 
 // Catch-only test
-TEST_CASE( "Sums are calculated" )
+TEST_CASE("Sums are calculated")
 {
-    REQUIRE( 1 + 1 == 2 );
-    REQUIRE( 1 + 2 == 3 );
+    REQUIRE(1 + 1 == 2);
+    REQUIRE(1 + 2 == 3);
 }
 
 /*

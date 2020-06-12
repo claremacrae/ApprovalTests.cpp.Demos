@@ -18,16 +18,19 @@ public:
 
         stream << "f(" << value << ") = " << fibonacci(value) << '\n';
         auto end = std::chrono::system_clock::now();
-        std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+        std::time_t end_time =
+            std::chrono::system_clock::to_time_t(end);
 
-        stream << "finished computation at " << std::ctime(&end_time) << '\n';
+        stream << "finished computation at " << std::ctime(&end_time)
+               << '\n';
     }
 
 private:
     static long fibonacci(unsigned n)
     {
-        if (n < 2) return n;
-        return fibonacci(n-1) + fibonacci(n-2);
+        if (n < 2)
+            return n;
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
     unsigned value;

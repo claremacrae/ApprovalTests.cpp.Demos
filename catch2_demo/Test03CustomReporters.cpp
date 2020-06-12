@@ -5,14 +5,14 @@ using namespace ApprovalTests;
 
 TEST_CASE("UseSpecificReporter")
 {
-    Approvals::verify(
-        "Some\nMulti-line\noutput",
-        Options(Windows::AraxisMergeReporter{}));
+    Approvals::verify("Some\nMulti-line\noutput",
+                      Options(Windows::AraxisMergeReporter{}));
 }
 
 TEST_CASE("UseCustomReporter")
 {
-    Approvals::verify("Some\nMulti-line\noutput",
+    Approvals::verify(
+        "Some\nMulti-line\noutput",
         Options(GenericDiffReporter(
             R"(C:\Program Files\TortoiseHg\lib\kdiff3.exe)")));
 }
@@ -23,7 +23,6 @@ TEST_CASE("UseQuietReporter")
     // It may be useful for running on build servers, where starting
     // a graphical diff tool for human inspection is not appropriate.
     // Failing tests will still fail, but nothing will be launched.
-    Approvals::verify(
-        "Some\nMulti-line\noutput",
-        Options(QuietReporter{}));
+    Approvals::verify("Some\nMulti-line\noutput",
+                      Options(QuietReporter{}));
 }

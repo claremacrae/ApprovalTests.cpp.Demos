@@ -7,7 +7,7 @@ TEST_CASE("DisposableExplanation")
 {
     {
         auto disposer = Approvals::useAsDefaultReporter(
-                std::make_shared<Mac::BeyondCompareReporter>());
+            std::make_shared<Mac::BeyondCompareReporter>());
         // Your tests here will use Mac::BeyondCompareReporter...
 
     } // as soon as the code passes this }, the disposer is destroyed

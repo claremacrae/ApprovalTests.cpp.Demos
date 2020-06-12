@@ -11,7 +11,9 @@ using namespace ApprovalTests;
 class DateRemovingLogFileWriter : public ApprovalWriter
 {
 public:
-    explicit DateRemovingLogFileWriter(FibonacciCalculator& calculator) : calculator(calculator)
+    explicit DateRemovingLogFileWriter(
+        FibonacciCalculator& calculator)
+        : calculator(calculator)
     {
     }
 
@@ -32,18 +34,20 @@ public:
     }
 
 private:
-    void rewriteLogFileRemovingDatesAndTimes(const std::string& path) const
+    void
+    rewriteLogFileRemovingDatesAndTimes(const std::string& path) const
     {
         auto lines = readLines(path);
         stripDatesAndTimes(lines);
         writeLines(lines, path);
     }
 
-    std::vector<std::string> readLines(const std::string& path ) const
+    std::vector<std::string> readLines(const std::string& path) const
     {
         std::ifstream infile(path);
-        if( !infile.is_open() )
-            throw std::domain_error( "Unable to load input file: " + path );
+        if (!infile.is_open())
+            throw std::domain_error("Unable to load input file: " +
+                                    path);
 
         std::vector<std::string> lines;
         std::string line;
@@ -58,26 +62,30 @@ private:
     {
         // Example date:
         // Tue Sep  3 16:58:52 2019
-        const auto dateRegex = R"(([A-Za-z]{3}) ([A-Za-z]{3}) ([0-9 ]{2}) ([0-9]{2}):([0-9]{2}):([0-9]{2}) ([0-9]{4}))";
+        const auto dateRegex =
+            R"(([A-Za-z]{3}) ([A-Za-z]{3}) ([0-9 ]{2}) ([0-9]{2}):([0-9]{2}):([0-9]{2}) ([0-9]{4}))";
         const std::string replacementText = "[date-time-removed]";
-        return std::regex_replace(line, std::regex(dateRegex), replacementText);
+        return std::regex_replace(
+            line, std::regex(dateRegex), replacementText);
     }
 
     void stripDatesAndTimes(std::vector<std::string>& lines) const
     {
-        for(auto& line : lines)
+        for (auto& line : lines)
         {
             line = stripDateAndTime(line);
         }
     }
 
-    void writeLines(const std::vector<std::string>& lines, const std::string& path ) const
+    void writeLines(const std::vector<std::string>& lines,
+                    const std::string& path) const
     {
         std::ofstream outfile(path);
-        if( !outfile.is_open() )
-            throw std::domain_error( "Unable to re-write input file: " + path );
+        if (!outfile.is_open())
+            throw std::domain_error(
+                "Unable to re-write input file: " + path);
 
-        for( const auto& line : lines)
+        for (const auto& line : lines)
         {
             outfile << line << '\n';
         }

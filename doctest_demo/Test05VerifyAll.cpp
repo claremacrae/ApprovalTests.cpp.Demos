@@ -7,9 +7,8 @@ using namespace ApprovalTests;
 
 TEST_CASE("verifyAllWithVector")
 {
-    std::vector<int> numbers{ 0, 1, 2, 3};
-    Approvals::verifyAll(
-        numbers);
+    std::vector<int> numbers{0, 1, 2, 3};
+    Approvals::verifyAll(numbers);
 }
 /*
  * Things to note here:
@@ -24,10 +23,9 @@ TEST_CASE("verifyAllWithVector")
  * 3. We can also supply a Reporter as an extra argument.
  */
 
-
 TEST_CASE("verifyAllWithHeaderAndVector")
 {
-    std::vector<int> numbers{ 0, 1, 2, 3};
+    std::vector<int> numbers{0, 1, 2, 3};
     Approvals::verifyAll(
         "Some descriptive text, to help understand the output",
         numbers,
@@ -55,15 +53,13 @@ Some descriptive text, to help understand the output
  * 4. We can also supply a Reporter as an extra argument.
  */
 
-
 TEST_CASE("verifyAllWithHeaderContainerAndLambda")
 {
-    std::deque<int> numbers{ 0, 1, 2, 3};
+    std::deque<int> numbers{0, 1, 2, 3};
     Approvals::verifyAll(
         "Negate Values",
         numbers,
-        [](int value, std::ostream& stream)
-        {
+        [](int value, std::ostream& stream) {
             stream << value << " => " << -value;
         },
         Options(DiffReporter{}));
@@ -89,12 +85,12 @@ Negate Values
 
 TEST_CASE("verifyAllWithHeaderBeginEndAndLambda")
 {
-    std::list<int> numbers{ 0, 1, 2, 3};
+    std::list<int> numbers{0, 1, 2, 3};
     Approvals::verifyAll(
         "Test Squares",
-        numbers.begin(), numbers.end(),
-        [](int value, std::ostream& stream)
-        {
+        numbers.begin(),
+        numbers.end(),
+        [](int value, std::ostream& stream) {
             stream << value << " => " << value * value;
         },
         Options(DiffReporter{}));

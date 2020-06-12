@@ -10,14 +10,16 @@ using namespace ApprovalTests;
 namespace
 {
     class LegacyThing;
-    std::ostream &operator<<(std::ostream &os, const LegacyThing &result);
+    std::ostream& operator<<(std::ostream& os,
+                             const LegacyThing& result);
     LegacyThing doLegacyOperation();
 
     class LegacyThing
     {
     };
 
-    std::ostream &operator<<(std::ostream &os, const LegacyThing &result)
+    std::ostream& operator<<(std::ostream& os,
+                             const LegacyThing& result)
     {
         os << "Some complicated output\nfrom my legacy code\n";
         return os;
@@ -69,7 +71,8 @@ TEST_CASE("Deal with dates and times in output with scrubber")
     // and a date-and-time-stamp, to an output file.
     // This calculate() method is the code that we are testing.
     FibonacciCalculator calculator(12);
-    const auto filename = Approvals::getDefaultNamer()->getReceivedFile(".txt");
+    const auto filename =
+        Approvals::getDefaultNamer()->getReceivedFile(".txt");
     calculator.calculate(filename);
 
     // As of v.10.0.1, ApprovalTests does not use Scrubbers
@@ -84,7 +87,8 @@ TEST_CASE("Deal with dates and times in output with scrubber")
     const auto dateRegex =
         R"([A-Za-z]{3} [A-Za-z]{3} [\d ]\d \d\d:\d\d:\d\d \d\d\d\d)";
     const std::string replacementText = "[date-time-removed]";
-    auto scrubber = Scrubbers::createRegexScrubber(dateRegex, replacementText);
+    auto scrubber =
+        Scrubbers::createRegexScrubber(dateRegex, replacementText);
 
     Approvals::verify(logText, Options(scrubber));
 }
@@ -150,7 +154,7 @@ TEST_CASE("Test an image", "[!shouldfail]")
     //    This would work, but if we get a test failure, it would be hard for a user
     //    to interpret the results/
     // 2. We could write the image in a standard graphics format, and if we
-    //    have a diffing tool that supports images, the results will be easy to 
+    //    have a diffing tool that supports images, the results will be easy to
     //    interpret.
 
     QImage image = getImage();

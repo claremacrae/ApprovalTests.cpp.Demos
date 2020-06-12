@@ -7,20 +7,21 @@
 
 #include <ostream>
 
-
 using namespace ApprovalTests;
 
 namespace
 {
     class LegacyThing;
-    std::ostream &operator<<(std::ostream &os, const LegacyThing &result);
+    std::ostream& operator<<(std::ostream& os,
+                             const LegacyThing& result);
     LegacyThing doLegacyOperation();
 
     class LegacyThing
     {
     };
 
-    std::ostream &operator<<(std::ostream &os, const LegacyThing &result)
+    std::ostream& operator<<(std::ostream& os,
+                             const LegacyThing& result)
     {
         os << "Some complicated output\nfrom my legacy code\n";
         return os;
@@ -63,7 +64,8 @@ TEST(Test07TestScenarios, Deal_with_dates_and_times_in_output)
     Approvals::verify(datelessWriter);
 }
 
-TEST(Test07TestScenarios, Deal_with_dates_and_times_in_output_with_scrubber)
+TEST(Test07TestScenarios,
+     Deal_with_dates_and_times_in_output_with_scrubber)
 {
     // As above, but this time we will use a Scrubber to replace the
     // date and time with a fixed string
@@ -72,7 +74,8 @@ TEST(Test07TestScenarios, Deal_with_dates_and_times_in_output_with_scrubber)
     // and a date-and-time-stamp, to an output file.
     // This calculate() method is the code that we are testing.
     FibonacciCalculator calculator(12);
-    const auto filename = Approvals::getDefaultNamer()->getReceivedFile(".txt");
+    const auto filename =
+        Approvals::getDefaultNamer()->getReceivedFile(".txt");
     calculator.calculate(filename);
 
     // As of v.10.0.1, ApprovalTests does not use Scrubbers
@@ -87,7 +90,8 @@ TEST(Test07TestScenarios, Deal_with_dates_and_times_in_output_with_scrubber)
     const auto dateRegex =
         R"([A-Za-z]{3} [A-Za-z]{3} [\d ]\d \d\d:\d\d:\d\d \d\d\d\d)";
     const std::string replacementText = "[date-time-removed]";
-    auto scrubber = Scrubbers::createRegexScrubber(dateRegex, replacementText);
+    auto scrubber =
+        Scrubbers::createRegexScrubber(dateRegex, replacementText);
 
     Approvals::verify(logText, Options(scrubber));
 }
@@ -142,7 +146,8 @@ namespace
     }
 }
 
-TEST(Test07TestScenarios, DISABLED_DUE_TO_INTENTIONAL_FAILURE_Test_an_image)
+TEST(Test07TestScenarios,
+     DISABLED_DUE_TO_INTENTIONAL_FAILURE_Test_an_image)
 {
     // Approvals is based on saving text files
 
@@ -153,7 +158,7 @@ TEST(Test07TestScenarios, DISABLED_DUE_TO_INTENTIONAL_FAILURE_Test_an_image)
     //    This would work, but if we get a test failure, it would be hard for a user
     //    to interpret the results/
     // 2. We could write the image in a standard graphics format, and if we
-    //    have a diffing tool that supports images, the results will be easy to 
+    //    have a diffing tool that supports images, the results will be easy to
     //    interpret.
 
     QImage image = getImage();

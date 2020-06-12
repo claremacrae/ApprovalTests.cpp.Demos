@@ -17,9 +17,12 @@ class OurApprovalTestCustomisations
 public:
     OurApprovalTestCustomisations()
         : subDirectoryDisposer(
-              ApprovalTests::Approvals::useApprovalsSubdirectory("approval_tests"))
+              ApprovalTests::Approvals::useApprovalsSubdirectory(
+                  "approval_tests"))
         , defaultNamerDisposer(
-              ApprovalTests::SeparateApprovedAndReceivedDirectoriesNamer::useAsDefaultNamer())
+              ApprovalTests::
+                  SeparateApprovedAndReceivedDirectoriesNamer::
+                      useAsDefaultNamer())
     {
     }
 

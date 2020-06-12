@@ -4,7 +4,7 @@
 using namespace ApprovalTests;
 
 // googletest - test static value, for demo purposes
-TEST( Test02, TestFixedInput )
+TEST(Test02, TestFixedInput)
 {
     Approvals::verify("Some\nMulti-line\noutput");
 }

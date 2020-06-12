@@ -11,7 +11,6 @@ public:
 
     int header1 = 42;
     std::string header2 = "FOO";
-
 };
 
 #endif //APPROVALTESTS_CPP_FAKECUSTOMFILE_H

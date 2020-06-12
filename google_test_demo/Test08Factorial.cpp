@@ -5,9 +5,9 @@
 
 using namespace ApprovalTests;
 
-int Factorial( int number )
+int Factorial(int number)
 {
-    return number <= 1 ? 1      : Factorial( number - 1 ) * number;  // pass
+    return number <= 1 ? 1 : Factorial(number - 1) * number; // pass
 }
 
 TEST(Test08Factorial, FactorialsUpTo10)
@@ -17,9 +17,8 @@ TEST(Test08Factorial, FactorialsUpTo10)
     std::iota(inputs.begin(), inputs.end(), 0);
 
     // Act on all values in inputs container:
-    Approvals::verifyAll("Factorial", inputs,
-        [](int i, std::ostream& os)
-        {
+    Approvals::verifyAll(
+        "Factorial", inputs, [](int i, std::ostream& os) {
             os << i << "! => " << Factorial(i);
         });
 }

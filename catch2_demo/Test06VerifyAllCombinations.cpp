@@ -17,9 +17,9 @@ TEST_CASE("verifyAllCombinationsWithFunction")
     const std::vector<int> numbers{1, 2, 3};
 
     CombinationApprovals::verifyAllCombinations(
-            concatenateStringAndInt,    // Function that takes one combination of inputs, and returns the result to be approved
-            strings,                    // The first input container
-            numbers);                   // The second input container
+        concatenateStringAndInt, // Function that takes one combination of inputs, and returns the result to be approved
+        strings,                 // The first input container
+        numbers);                // The second input container
 }
 /*
  * Things to note here:
@@ -40,16 +40,17 @@ TEST_CASE("verifyAllCombinationsWithFunction")
  * 5. We can also supply a Reporter as an extra argument.
  */
 
-
 TEST_CASE("verifyAllCombinationsWithLambda")
 {
     std::vector<std::string> strings{"hello", "world"};
     std::vector<int> numbers{1, 2, 3};
     CombinationApprovals::verifyAllCombinations(
-            // Lambda that acts on one combination of inputs, and returns the result to be approved:
-            [](std::string s, int i) { return s + " " + std::to_string(i); },
-            strings,                    // The first input container
-            numbers);                   // The second input container
+        // Lambda that acts on one combination of inputs, and returns the result to be approved:
+        [](std::string s, int i) {
+            return s + " " + std::to_string(i);
+        },
+        strings,  // The first input container
+        numbers); // The second input container
 }
 /*
  * Things to note here:
