@@ -44,7 +44,7 @@ jobs:
       matrix:
         buildtype: [
           windows-latest,
-          windows-latest (clangcl),
+#          windows-latest (clangcl),
           windows-2016,
           ubuntu-latest,
           ubuntu-latest-ninja,
@@ -59,10 +59,10 @@ jobs:
           generator: '"Visual Studio 16 2019"'
           in_source_build: true
 
-        - buildtype: windows-latest (clangcl)
-          os: windows-latest
-          generator: '"Visual Studio 16 2019" -T "clangcl"'
-          in_source_build: true
+#        - buildtype: windows-latest (clangcl)
+#          os: windows-latest
+#          generator: '"Visual Studio 16 2019" -T "clangcl"'
+#          in_source_build: true
 
         - buildtype: windows-2016
           os: windows-2016
