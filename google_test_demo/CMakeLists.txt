@@ -11,7 +11,7 @@ add_executable(${PROJECT_NAME}
         Test07TestScenarios.cpp
         Test08Factorial.cpp
         )
-target_link_libraries(${PROJECT_NAME} CONAN_PKG::approvaltests.cpp include gtest gtest_main)
+target_link_libraries(${PROJECT_NAME} CONAN_PKG::approvaltests.cpp include CONAN_PKG::gtest)
 
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
