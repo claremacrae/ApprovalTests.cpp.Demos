@@ -34,7 +34,6 @@ if (NOT_SUBPROJECT)
             "${CMAKE_BINARY_DIR}/googletest-build")
 
     enable_testing()
-    add_subdirectory(third_party)
     add_subdirectory(include)
 
     add_subdirectory(catch2_demo)
