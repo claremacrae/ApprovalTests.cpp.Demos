@@ -2,6 +2,10 @@
 
 ## Introduction
 
+[![Build Status](https://travis-ci.com/claremacrae/ApprovalTests.cpp.Demos.svg?branch=master)](https://travis-ci.com/claremacrae/ApprovalTests.cpp.Demos/builds) 
+[![Build status](https://ci.appveyor.com/api/projects/status/22e9j3e5pyviumrj/branch/master?svg=true)](https://ci.appveyor.com/project/claremacrae/approvaltests-cpp-demos/branch/master) 
+[![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.Demos/workflows/build/badge.svg?branch=master)](https://github.com/claremacrae/ApprovalTests.cpp.Demos/actions?query=branch%3Amaster)
+
 Code samples and information for various talks and demos on ApprovalTests.cpp.
 
 The samples here demonstrate use of [ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp), which is the C++ implementation of Llewellyn Falco's [Approval Tests](http://approvaltests.com/) approach to testing legacy and hard-to-test code.
