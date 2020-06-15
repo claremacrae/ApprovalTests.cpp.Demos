@@ -119,9 +119,17 @@ jobs:
     - name: make build space
       run: |
         mkdir ${{ env.BUILD_DIR_PATH }}
+
+    - name: set up python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+
     - name: install conan
       run: |
-        pip install conan
+        python -m pip install --upgrade pip
+        pip install --upgrade conan
+
     - name: cmake
       run: |
         cmake --version
