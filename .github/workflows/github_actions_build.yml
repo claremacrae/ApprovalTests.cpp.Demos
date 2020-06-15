@@ -119,6 +119,9 @@ jobs:
     - name: make build space
       run: |
         mkdir ${{ env.BUILD_DIR_PATH }}
+    - name: install conan
+      run: |
+        pip install conan
     - name: cmake
       run: |
         cmake --version
