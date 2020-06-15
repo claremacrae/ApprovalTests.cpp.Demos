@@ -19,7 +19,7 @@ conan_cmake_run(
     approvaltests.cpp/10.0.1
     catch2/2.11.0
     doctest/2.3.7
-    # note: gtest is set up in the top-level CMakeLists.txt file
+    gtest/1.8.1
   OPTIONS
     ${CONAN_EXTRA_OPTIONS}
   BASIC_SETUP
