@@ -63,7 +63,7 @@ private:
         // Example date:
         // Tue Sep  3 16:58:52 2019
         const auto dateRegex =
-            R"(([A-Za-z]{3}) ([A-Za-z]{3}) ([0-9 ]{2}) ([0-9]{2}):([0-9]{2}):([0-9]{2}) ([0-9]{4}))";
+            R"([A-Za-z]{3} [A-Za-z]{3} [\d ]\d \d\d:\d\d:\d\d \d\d\d\d)";
         const std::string replacementText = "[date-time-removed]";
         return std::regex_replace(
             line, std::regex(dateRegex), replacementText);
