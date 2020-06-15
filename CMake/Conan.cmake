@@ -18,6 +18,7 @@ conan_cmake_run(
     ${CONAN_EXTRA_REQUIRES}
     approvaltests.cpp/10.0.1
     catch2/2.11.0
+    doctest/2.3.7
   OPTIONS
     ${CONAN_EXTRA_OPTIONS}
   BASIC_SETUP
