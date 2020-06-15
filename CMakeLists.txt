@@ -10,7 +10,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/CMake")
 
 project(ApprovalTests.cpp)
 
-include(cmake/Conan.cmake)
+include(Conan)
 run_conan()
 
 set(CMAKE_VERBOSE_MAKEFILE off)
