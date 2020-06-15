@@ -31,7 +31,7 @@ before_build:
 
 build_script:
 - cmd: |
-    cmake --build .
+    cmake --build -DCMAKE_BUILD_TYPE=Debug .
 
 test_script:
 - cmd: |
