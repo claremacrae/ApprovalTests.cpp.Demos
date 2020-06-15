@@ -12,7 +12,7 @@ add_executable(${PROJECT_NAME}
         Test07TestScenarios.cpp
         Test08Factorial.cpp
         )
-target_link_libraries(${PROJECT_NAME} CONAN_PKG::approvaltests.cpp include Catch2::Catch2)
+target_link_libraries(${PROJECT_NAME} CONAN_PKG::approvaltests.cpp include CONAN_PKG::catch2)
 target_compile_definitions(${PROJECT_NAME} PRIVATE CATCH_CONFIG_FAST_COMPILE)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
