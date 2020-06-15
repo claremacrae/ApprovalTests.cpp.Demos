@@ -9,7 +9,9 @@ endif ()
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/CMake")
 
 project(ApprovalTests.cpp)
-#add_subdirectory(ApprovalTests)
+
+include(cmake/Conan.cmake)
+run_conan()
 
 set(CMAKE_VERBOSE_MAKEFILE off)
 
