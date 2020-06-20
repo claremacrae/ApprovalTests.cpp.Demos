@@ -14,14 +14,7 @@ conan_add_remote(NAME bincrafters URL
                  https://api.bintray.com/conan/bincrafters/public-conan)
 
 conan_cmake_run(
-  REQUIRES
-    ${CONAN_EXTRA_REQUIRES}
-    approvaltests.cpp/10.0.1
-    catch2/2.11.0
-    doctest/2.3.7
-    gtest/1.8.1
-  OPTIONS
-    ${CONAN_EXTRA_OPTIONS}
+  CONANFILE conanfile.txt
   BASIC_SETUP
   CMAKE_TARGETS # individual targets to link to
   BUILD
