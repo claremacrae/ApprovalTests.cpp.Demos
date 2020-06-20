@@ -2,6 +2,6 @@
 
 [requires]
 approvaltests.cpp/10.0.1
-catch2/2.11.0
-doctest/2.3.7
+catch2/2.12.2
+doctest/2.3.8
 gtest/1.8.1
