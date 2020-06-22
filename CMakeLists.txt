@@ -8,7 +8,7 @@ endif ()
 # Provide path for scripts
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/CMake")
 
-project(ApprovalTests.cpp)
+project(ApprovalTests.cpp.Demos)
 
 include(Conan)
 run_conan()
