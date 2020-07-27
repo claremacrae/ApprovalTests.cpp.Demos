@@ -1,4 +1,3 @@
 f(12) = 144
 finished computation at [date-time-removed]
 
-

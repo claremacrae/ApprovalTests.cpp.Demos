@@ -75,11 +75,6 @@ TEST_CASE("Deal with dates and times in output with scrubber")
         Approvals::getDefaultNamer()->getReceivedFile(".txt");
     calculator.calculate(filename);
 
-    // As of v.10.0.1, ApprovalTests does not use Scrubbers
-    // in verifyExistingFile(), so we have to read in the contents
-    // of the file in to a string, and verify that.
-    const auto logText = FileUtils::readFileThrowIfMissing(filename);
-
     // Create a "Scrubber" object that will convert date-and-time strings
     // to some fixed text such as:
     //  'Fri Jun  2 09:36:33 2020'
@@ -90,7 +85,7 @@ TEST_CASE("Deal with dates and times in output with scrubber")
     auto scrubber =
         Scrubbers::createRegexScrubber(dateRegex, replacementText);
 
-    Approvals::verify(logText, Options(scrubber));
+    Approvals::verifyExistingFile(filename, Options(scrubber));
 }
 
 //--------------------------------------------------------------------------------
