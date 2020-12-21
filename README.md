@@ -2,7 +2,6 @@
 
 ## Introduction
 
-[![Build status](https://ci.appveyor.com/api/projects/status/22e9j3e5pyviumrj/branch/master?svg=true)](https://ci.appveyor.com/project/claremacrae/approvaltests-cpp-demos/branch/master) 
 [![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.Demos/workflows/build/badge.svg?branch=master)](https://github.com/claremacrae/ApprovalTests.cpp.Demos/actions?query=branch%3Amaster)
 
 Code samples and information for various talks and demos on ApprovalTests.cpp.
