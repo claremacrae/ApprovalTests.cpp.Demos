@@ -3,10 +3,11 @@ description: "Set up conan using pip"
 runs:
   using: "composite"
   steps:
-    - name: set up python
-      uses: actions/setup-python@v1
-      with:
-        python-version: '3.x'
+# Disabled, because composite run steps don't support "using" yet
+#    - name: set up python
+#      uses: actions/setup-python@v1
+#      with:
+#        python-version: '3.x'
 
     - name: install conan
       run: |

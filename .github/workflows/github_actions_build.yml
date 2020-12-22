@@ -137,6 +137,10 @@ jobs:
       - uses: seanmiddleditch/gha-setup-ninja@v3
         if: contains(matrix.generator, 'Ninja')
 
+      - name: set up python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.x'
       - uses: ./.github/workflows/setup-conan
 
       - name: configure
@@ -200,6 +204,10 @@ jobs:
       - uses: seanmiddleditch/gha-setup-ninja@v3
         if: contains(matrix.generator, 'Ninja')
 
+      - name: set up python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.x'
       - uses: ./.github/workflows/setup-conan
 
       - name: configure
@@ -244,6 +252,10 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
+      - name: set up python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.x'
       - uses: ./.github/workflows/setup-conan
 
       - name: configure
