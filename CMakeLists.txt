@@ -15,12 +15,10 @@ run_conan()
 
 set(CMAKE_VERBOSE_MAKEFILE off)
 
-if (NOT_SUBPROJECT)
-    enable_testing()
-    add_subdirectory(include)
+enable_testing()
+add_subdirectory(include)
 
-    add_subdirectory(catch2_demo)
-    add_subdirectory(doctest_demo)
-    add_subdirectory(google_test_demo)
-    add_subdirectory(specific_examples)
-endif ()
+add_subdirectory(catch2_demo)
+add_subdirectory(doctest_demo)
+add_subdirectory(google_test_demo)
+add_subdirectory(specific_examples)
