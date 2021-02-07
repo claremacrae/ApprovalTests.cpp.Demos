@@ -4,4 +4,4 @@
 approvaltests.cpp/10.1.2
 catch2/2.12.2
 doctest/2.3.8
-gtest/1.8.1
+gtest/1.10.0
