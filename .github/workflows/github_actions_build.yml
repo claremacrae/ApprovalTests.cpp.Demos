@@ -85,7 +85,14 @@ jobs:
             generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes'
             relative_build_dir_path: ''
 
-          - job-name: 'gcc10 ninja'
+          - job-name: 'gcc10 ninja in-source'
+            os-version: '20.04'
+            c-compiler: 'gcc-10'
+            cxx-compiler: 'g++-10'
+            generator: '"Ninja"'
+            relative_build_dir_path: ''
+
+          - job-name: 'gcc10 ninja out-of-source'
             os-version: '20.04'
             c-compiler: 'gcc-10'
             cxx-compiler: 'g++-10'
@@ -158,7 +165,13 @@ jobs:
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
-          - job-name: xcode-12.4-ninja
+          - job-name: 'xcode-12.4-ninja in-source'
+            xcode-version: '12.4'
+            os-version: '10.15'
+            generator: '"Ninja"'
+            relative_build_dir_path: ''
+
+          - job-name: 'xcode-12.4-ninja out-of-source'
             xcode-version: '12.4'
             os-version: '10.15'
             generator: '"Ninja"'
