@@ -11,7 +11,8 @@ set_property(GLOBAL PROPERTY CTEST_TARGETS_ADDED 1) # hack to prevent CTest adde
 # Catch2
 message(NOTICE "Fetching Catch2...")
 set(CATCH_BUILD_TESTING OFF CACHE BOOL "")
-FetchContent_Declare(Catch2
+FetchContent_Declare(
+        Catch2
         GIT_REPOSITORY https://github.com/catchorg/Catch2.git
         GIT_TAG v2.x)
 FetchContent_MakeAvailable(Catch2)
@@ -33,16 +34,17 @@ message(NOTICE "Fetching googletest...")
 # Prevent GoogleTest from overriding our compiler/linker options
 # when building with Visual Studio
 set(gtest_force_shared_crt ON CACHE BOOL "" )
-FetchContent_Declare(googletest
-        GIT_REPOSITORY https://github.com/abseil/googletest.git
-        GIT_TAG master)
+FetchContent_Declare(
+        googletest
+        GIT_REPOSITORY  https://github.com/abseil/googletest.git
+        GIT_TAG         master)
 FetchContent_MakeAvailable(googletest)
 
 # -------------------------------------------------------------------
 # ApprovalTests.cpp
 message(NOTICE "Fetching ApprovalTests.cpp...")
-FetchContent_Declare(ApprovalTests
-        GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
-        GIT_TAG master)
-
+FetchContent_Declare(
+        ApprovalTests
+        GIT_REPOSITORY  https://github.com/approvals/ApprovalTests.cpp.git
+        GIT_TAG         master)
 FetchContent_MakeAvailable(ApprovalTests)
