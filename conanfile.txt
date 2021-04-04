@@ -1,7 +1,0 @@
-# See CMake/Conan.cmake for how 'conan install' is launched from cmake
-
-[requires]
-approvaltests.cpp/10.8.0
-catch2/2.13.4
-doctest/2.4.4
-gtest/1.10.0
