@@ -28,8 +28,8 @@ FetchContent_MakeAvailable(doctest)
 set_target_properties(doctest_with_main PROPERTIES FOLDER "external")
 
 # -------------------------------------------------------------------
-message(NOTICE "Fetching googletest...")
 # GoogleTest
+message(NOTICE "Fetching googletest...")
 # Prevent GoogleTest from overriding our compiler/linker options
 # when building with Visual Studio
 set(gtest_force_shared_crt ON CACHE BOOL "" )
@@ -41,7 +41,6 @@ FetchContent_MakeAvailable(googletest)
 # -------------------------------------------------------------------
 # ApprovalTests.cpp
 message(NOTICE "Fetching ApprovalTests.cpp...")
-
 FetchContent_Declare(ApprovalTests
         GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
         GIT_TAG master)
