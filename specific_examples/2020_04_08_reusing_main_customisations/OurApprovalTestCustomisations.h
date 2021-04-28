@@ -8,7 +8,7 @@
 // This is useful if you have multiple test programs, and you want consistent
 // customisations in all of them. You can put a class like this in a library
 // of code that is shared between all the test programs, and have one of
-// these objects created in the main.cpp of each test.
+// these objects created in the main.cpp of each test program.
 //
 // Then, if you later wish to add change or add a customisation, you only
 // need to update this one class.
